@@ -14,7 +14,7 @@ const app = new Hono()
 getSupabaseClient()
 
 app.use('*', cors({
-    origin: 'http://localhost:5173',
+    origin:  process.env.CLIENT || 'http://localhost:5173',
     allowMethods: ['POST', 'GET', 'OPTIONS', 'DELETE'],
     maxAge: 600,
     credentials: true,
