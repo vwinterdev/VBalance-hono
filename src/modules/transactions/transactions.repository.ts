@@ -6,12 +6,19 @@ import supabase from '../../config/supabase.config.js'
 export class TransactionsRepository {
 
     async createTransaction(dto: CreateTransactionDto) {
-        return await supabase.from('transaction').insert({
-            balance: dto.balance,
-            category_id: dto.categoryId,
-            user_id: dto.userId,
-            is_positive: dto.isPositive,
-        })
+        const { data, error } = await supabase
+            .from('transaction')
+            .insert({
+                balance: dto.balance,
+                category_id: dto.categoryId,
+                user_id: dto.userId,
+                is_positive: dto.isPositive,
+            })
+            .select()
+            .single()
+    
+        if (error) throw error
+        return data
     }
 
     async getTransactions(dto: GetTransactionsDto): Promise<TransactionResponse[]> {
