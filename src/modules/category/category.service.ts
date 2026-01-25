@@ -13,8 +13,8 @@ export class CategoryService {
         return await this.repository.getCategories(dto)
     }
 
-    async createCategory(dto: CreateCategoryDto): Promise<CreateCategoryResponse> {
-        return await this.repository.createCategory(dto)
+    async createCategory(dto: CreateCategoryDto, userId: string): Promise<CreateCategoryResponse> {
+        return await this.repository.createCategory(dto, userId)
     }
 
     async createdStartUserCategories(userId: string): Promise<CreateCategoryResponse> {

@@ -3,11 +3,11 @@ import { getSupabaseClient } from './config/supabase.config.js'
 
 // Импорт модулей
 import authRoutes from './modules/auth/auth.routes.js'
-import profileRoutes from './modules/profile/profile.routes.js'
 import uploadRoutes from './modules/upload/upload.routes.js'
 import { cors } from 'hono/cors'
 import categoryRoutes from './modules/category/category.routes.js'
 import transactionsRoutes from './modules/transactions/transactions.routes.js'
+import walletRoutes from './modules/wallet/wallet.routes.js'
 const app = new Hono()
 
 // Инициализируем Supabase клиент при старте
@@ -22,10 +22,11 @@ app.use('*', cors({
 
 // Подключаем модули с префиксами
 app.route('/auth', authRoutes)
-app.route('/profile', profileRoutes)
 app.route('/category', categoryRoutes)
 app.route('/upload', uploadRoutes)
 app.route('/transactions', transactionsRoutes)
+app.route('/wallet', walletRoutes)
+
 // Главная страница с документацией API
 app.get('/', (c) => {
   return c.json({

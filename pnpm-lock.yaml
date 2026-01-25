@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hono/zod-validator':
+        specifier: ^0.7.6
+        version: 0.7.6(hono@4.11.3)(zod@4.3.6)
       '@supabase/ssr':
         specifier: ^0.8.0
         version: 0.8.0(@supabase/supabase-js@2.90.0)
@@ -17,6 +20,9 @@ importers:
       hono:
         specifier: ^4.8.9
         version: 4.11.3
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -26,6 +32,12 @@ importers:
         version: 5.9.3
 
 packages:
+
+  '@hono/zod-validator@0.7.6':
+    resolution: {integrity: sha512-Io1B6d011Gj1KknV4rXYz4le5+5EubcWEU/speUjuw9XMMIaP3n78yXLhjd2A3PXaXaUwEAluOiAyLqhBEJgsw==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.25.0 || ^4.0.0
 
   '@supabase/auth-js@2.90.0':
     resolution: {integrity: sha512-J5Jgr1XE86NpK0LX8yLdjv3NzzsUnGky72QIGR1AcdVXHQIhwjb3JFEjNutODNKyOrknx00lyClOvqooHFHIiw==}
@@ -100,7 +112,15 @@ packages:
       utf-8-validate:
         optional: true
 
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
 snapshots:
+
+  '@hono/zod-validator@0.7.6(hono@4.11.3)(zod@4.3.6)':
+    dependencies:
+      hono: 4.11.3
+      zod: 4.3.6
 
   '@supabase/auth-js@2.90.0':
     dependencies:
@@ -168,3 +188,5 @@ snapshots:
   undici-types@6.21.0: {}
 
   ws@8.19.0: {}
+
+  zod@4.3.6: {}

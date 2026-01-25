@@ -1,6 +1,7 @@
 export interface SignUpDto {
   email: string
   password: string
+  display_name: string
 }
 
 export interface SignInDto {
@@ -18,6 +19,7 @@ export interface AuthResponse {
   user: {
     id: string
     email: string
+    displayName: string
   }
 }
 
@@ -29,10 +31,10 @@ export interface ErrorResponse {
  * Ответ с информацией о текущем пользователе
  */
 export interface UserResponse {
-  user: {
+  
     id: string
     email: string
-    created_at: string
+    displayName: string
     isVerified: boolean
-  }
+  
 }

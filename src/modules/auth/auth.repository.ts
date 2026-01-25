@@ -7,6 +7,11 @@ export class AuthRepository {
     return await supabase.auth.signUp({
       email: dto.email,
       password: dto.password,
+      options: {
+        data: {
+          display_name: dto.display_name,
+        },
+      },
     })
   }
 

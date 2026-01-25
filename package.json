@@ -2,9 +2,11 @@
   "name": "v_balance-backend",
   "type": "module",
   "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.90.0",
-    "hono": "^4.8.9"
+    "hono": "^4.8.9",
+    "zod": "^4.3.6"
   },
   "scripts": {
     "dev": "vc dev"
