@@ -80,19 +80,4 @@ export class CategoryRepository {
         message: 'Category created successfully'
     }
   }
-  async createdStartUserCategories(userId: string) : Promise<CreateCategoryResponse> {
-    return await this.createCategory([{
-    name: 'Еда',
-    userId: userId,
-    color: '#FF0000',
-    secondColor: '#FF0000',
-    icon: '🍔'
-   },{
-    name: 'Транспорт',
-    userId: userId,
-    color: '#00FF00',
-    secondColor: '#00FF00',
-    icon: '🚗'
-   }, ])
-  }
 }

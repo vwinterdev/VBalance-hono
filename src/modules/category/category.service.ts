@@ -16,8 +16,4 @@ export class CategoryService {
     async createCategory(dto: CreateCategoryDto, userId: string): Promise<CreateCategoryResponse> {
         return await this.repository.createCategory(dto, userId)
     }
-
-    async createdStartUserCategories(userId: string): Promise<CreateCategoryResponse> {
-        return await this.repository.createdStartUserCategories(userId)
-    }
 }
